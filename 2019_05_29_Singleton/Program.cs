@@ -12,6 +12,7 @@ namespace _2019_05_29_Singleton
         static void Main(string[] args)
         {
             Singleton5 xxx = Singleton5.Instance;
+            xxx.doSomeWork();
         }
     }
 }

@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 
 namespace SingletonLib
 {
     public sealed class Singleton5 // The key word "sealed" here prevents inheritance.
     {
+        private string someSetting;
         public void doSomeWork()
         {
             Console.WriteLine("Singleton5 is working.");
@@ -17,6 +19,9 @@ namespace SingletonLib
         {
             // We can do some init work here.
             // For example, load config etc.
+            someSetting = ConfigurationManager.AppSettings["testsettings"];
+            Console.WriteLine(someSetting);
+
 
         }
         public static Singleton5 Instance // define a property to get the Singleton instance.
